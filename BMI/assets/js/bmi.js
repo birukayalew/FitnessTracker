@@ -14,8 +14,11 @@ let calcBmi = (height,weight) =>{
     } else if (BMI>=25.0 && BMI<= 29.9){
         return "you are Overweight: "+BMI
     }
-    else{
+    else if(BMI>=30){
         return "Obese: " + BMI
+    }
+    else{
+        return "wrong input"
     }
 }
 (function (){
