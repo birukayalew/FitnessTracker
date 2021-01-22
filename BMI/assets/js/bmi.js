@@ -4,7 +4,7 @@ var BMI;
 var ans;
 height = prompt("Enter your height in meter: ")
 weight = prompt("Enter your weight in: ")
-function calcBmi(height,weight){
+let calcBmi = (height,weight) =>{
     BMI = weight/(height*height)
     if (BMI < 18.5){
         return "you are underweight: " + BMI
@@ -19,7 +19,6 @@ function calcBmi(height,weight){
     }
 }
 (function (){
-    // console.log("Age:"+ageCalc(birthYear)+"years old");
     console.log(calcBmi(height,weight));
     
 })();

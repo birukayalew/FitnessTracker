@@ -1,4 +1,4 @@
-function add() {
+let add = () => {
     let total=0
     while (true){
         let num1=prompt("Enter q when you are done:");
@@ -11,7 +11,7 @@ function add() {
     }
     return total
 }
-function sub() {
+let sub=  () => {
     let count=0;
     let total=0;
     while (true){
@@ -31,7 +31,7 @@ function sub() {
     }
     return total
 }
-function mul() {
+let mul = () => {
     let total=1
     while (true){
         let num1=prompt("Enter q when you are done:");
@@ -44,7 +44,7 @@ function mul() {
     }
     return total
 }
-function division() {
+let division = () => {
     let count=0;
     let total=0;
     while (true){
