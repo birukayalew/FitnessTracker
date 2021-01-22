@@ -56,7 +56,7 @@ console.log(family());
 //age calculator function
 function ageCalc(birthYear)
 {
-    return "YOur age is: "+ new Date().getFullYear()-birthYear;
+    return "Your age is: "+ new Date().getFullYear()-birthYear;
 }
 console.log(ageCalc(birthYear));
 
