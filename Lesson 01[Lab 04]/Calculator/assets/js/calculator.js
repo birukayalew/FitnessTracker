@@ -9,7 +9,7 @@ let add = () => {
             total=total+Number(num1)
         }
     }
-    return total
+    return "sum: "+total
 }
 let sub=  () => {
     let count=0;
@@ -29,7 +29,7 @@ let sub=  () => {
         }
         count++;
     }
-    return total
+    return "sub: "+total
 }
 let mul = () => {
     let total=1
@@ -42,7 +42,7 @@ let mul = () => {
             total=total*Number(num1)
         }
     }
-    return total
+    return 'mul:'+ total
 }
 let division = () => {
     let count=0;
@@ -67,7 +67,7 @@ let division = () => {
         }
         count++;
     }
-    return total.toFixed(2)
+    return 'div:'+total.toFixed(2)
 }
 function max() {
     let count=0;
@@ -91,7 +91,7 @@ function max() {
         }
         count++;
     }
-    return maximum
+    return 'max:'+maximum
 }
 function min() {
     let count=0;
@@ -115,7 +115,7 @@ function min() {
         }
         count++;
     }
-    return minimum
+    return 'min:'+minimum
 }
 function average() {
     let count=0
@@ -130,14 +130,15 @@ function average() {
             count+=1
         }
     }
-    return total/count
+    return 'average:'+total/count
 }
 function square() {
     let num1=prompt("Enter the number:")
-    return Number(num1)*Number(num1)
+    return 'square:'+Number(num1)*Number(num1)
 }
 
-let service = prompt("Choose operation from here: '+ - / * Mx Mi Av Sq'")
+let service = prompt("Choose operation from here: '+ - / * Mx Mi Av Sq quit'")
+while(service!='quit'){
 if (service==="+"){
     console.log(add());
 }
@@ -161,4 +162,6 @@ else if(service==="Av"){
 }
 else if(service==="Sq"){
     console.log(square());
+}
+service = prompt("Choose operation from here: '+ - / * Mx Mi Av Sq quit'")
 }

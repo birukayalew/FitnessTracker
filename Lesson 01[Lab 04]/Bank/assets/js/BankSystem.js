@@ -58,6 +58,7 @@ let transfer = () => {
 
     
 }
+
 while(true){
     let front=prompt("Hello, What do you want to do?: 'd/t/b/w/q'")
     if (front==="q"){
