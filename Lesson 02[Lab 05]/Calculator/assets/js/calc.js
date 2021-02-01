@@ -39,4 +39,52 @@ buttons.forEach(but => {
 
 
 
-    
+ function calculate(){
+    let curr = ""
+    let final = new Array()
+    index=0
+    let ans = 0
+    while (index<inputs.value.length){
+        if (inputs.value.charAt(index) =="+" || inputs.value.charAt(index) =="-" || inputs.value.charAt(index) =="*" || inputs.value.charAt(index) =="/") {
+
+            final.push(curr)
+            final.push(inputs.value.charAt(index))
+            curr=""
+        }
+        else{
+            curr+=inputs.value.charAt(index)
+        }
+        index+=1
+    }
+    final.push(curr)
+    index=0
+    while(index<final.length-1){
+        
+       let num1 = final[index]
+       let op = final[index+1]
+       let num2 = final[index+2]
+       if (op==="+"){
+           ans = Number(num1) + Number(num2)
+       }
+       else if (op==="-"){
+           ans = Number(num1) - Number(num2)
+       }
+       else if (op==="/"){
+           if (Number(num2)===0){
+               ans = "Undefined"
+           }else{
+               ans = Number(num1) / Number(num2)
+           }
+           
+       }
+       else if(op==="*"){
+           ans = Number(num1) * Number(num2)
+       }
+       index+=2
+       final[index]=ans.toString()
+       
+        
+    }
+    inputs.value=final[final.length-1]
+    return final[final.length-1]
+}
