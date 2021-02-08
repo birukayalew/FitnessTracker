@@ -4,11 +4,11 @@ const form = document.querySelector('#task-form'); //The form at the top
 const filter = document.querySelector('#filter'); //the task filter text field
 const taskList = document.querySelector('.collection'); //The UL
 const clearBtn = document.querySelector('.clear-tasks'); //the all task clear button
-// const increasing = document.querySelector('#asc')
-// const decreasing = document.querySelector('#des')
+const increasing = document.querySelector('#asc')
+const decreasing = document.querySelector('#des')
 const reloadIcon = document.querySelector('.fa'); //the reload button at the top navigation 
-// decreasing.addEventListener('click',descending)
-// increasing.addEventListener('click',ascending)
+decreasing.addEventListener('click',descending)
+increasing.addEventListener('click',ascending)
 
 //DB variable 
 
@@ -129,69 +129,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Remove task event [event delegation]
-//     taskList.addEventListener('click', removeTask);
+    taskList.addEventListener('click', removeTask);
 
-//     function removeTask(e) {
+    function removeTask(e) {
 
-//         if (e.target.parentElement.classList.contains('delete-item')) {
-//             if (confirm('Are You Sure about that ?')) {
-//                 // get the task id
-//                 let taskID = Number(e.target.parentElement.parentElement.getAttribute('data-task-id'));
-//                 // use a transaction
-//                 let transaction = DB.transaction(['tasks'], 'readwrite');
-//                 let objectStore = transaction.objectStore('tasks');
-//                 objectStore.delete(taskID);
+        if (e.target.parentElement.classList.contains('delete-item')) {
+            if (confirm('Are You Sure about that ?')) {
+                // get the task id
+                let taskID = Number(e.target.parentElement.parentElement.getAttribute('data-task-id'));
+                // use a transaction
+                let transaction = DB.transaction(['tasks'], 'readwrite');
+                let objectStore = transaction.objectStore('tasks');
+                objectStore.delete(taskID);
 
-//                 transaction.oncomplete = () => {
-//                     e.target.parentElement.parentElement.remove();
-//                 }
+                transaction.oncomplete = () => {
+                    e.target.parentElement.parentElement.remove();
+                }
 
-//             }
+            }
 
-//         }
+        }
 
-//     }
+    }
 
-//     //clear button event listener   
-//     clearBtn.addEventListener('click', clearAllTasks);
+    //clear button event listener   
+    clearBtn.addEventListener('click', clearAllTasks);
 
-//     //clear tasks 
-//     function clearAllTasks() {
-//         let transaction = DB.transaction("tasks", "readwrite");
-//         let tasks = transaction.objectStore("tasks");
-//         // clear the table.
-//         tasks.clear();
-//         displayTaskList();
-//         console.log("Tasks Cleared !!!");
-//     }
-// function descending(){
-//     console.log(taskList)
-//     const search= document.querySelector('.collection');
-//     const items=search.getElementsByTagName('li')
-//     for(i=0;i<items.length;i++){
-//         for(j=0;j<items.length-1;j++){
-//             date1=taskList.children[j].children[0].innerHTML
-//             date2=taskList.children[j+1].children[0].innerHTML
-//             if (date1 < date2){
-//                 let temp = taskList.children[j].innerHTML;
-//                 taskList.children[j].innerHTML=taskList.children[j+1].innerHTML;
-//                 taskList.children[j+1].innerHTML=temp
-//             }
-//         }
-//     }
-// }
-// function ascending(){
-//     const search= document.querySelector('.collection');
-//     const items=search.getElementsByTagName('li')
-//     for(i=0;i<items.length;i++){
-//         for(j=0;j<items.length-1;j++){
-//             date1=taskList.children[j].children[0].innerHTML
-//             date2=taskList.children[j+1].children[0].innerHTML
-//             if (date1 > date2){
-//                 let temp = taskList.children[j].innerHTML;
-//                 taskList.children[j].innerHTML=taskList.children[j+1].innerHTML;
-//                 taskList.children[j+1].innerHTML=temp
-//             }
-//         }
-//     }
-// }
+    //clear tasks 
+    function clearAllTasks() {
+        let transaction = DB.transaction("tasks", "readwrite");
+        let tasks = transaction.objectStore("tasks");
+        // clear the table.
+        tasks.clear();
+        displayTaskList();
+        console.log("Tasks Cleared !!!");
+    }
+function descending(){
+    console.log(taskList)
+    const search= document.querySelector('.collection');
+    const items=search.getElementsByTagName('li')
+    for(i=0;i<items.length;i++){
+        for(j=0;j<items.length-1;j++){
+            date1=taskList.children[j].children[0].innerHTML
+            date2=taskList.children[j+1].children[0].innerHTML
+            if (date1 < date2){
+                let temp = taskList.children[j].innerHTML;
+                taskList.children[j].innerHTML=taskList.children[j+1].innerHTML;
+                taskList.children[j+1].innerHTML=temp
+            }
+        }
+    }
+}
+function ascending(){
+    const search= document.querySelector('.collection');
+    const items=search.getElementsByTagName('li')
+    for(i=0;i<items.length;i++){
+        for(j=0;j<items.length-1;j++){
+            date1=taskList.children[j].children[0].innerHTML
+            date2=taskList.children[j+1].children[0].innerHTML
+            if (date1 > date2){
+                let temp = taskList.children[j].innerHTML;
+                taskList.children[j].innerHTML=taskList.children[j+1].innerHTML;
+                taskList.children[j+1].innerHTML=temp
+            }
+        }
+    }
+}
