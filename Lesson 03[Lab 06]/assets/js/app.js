@@ -195,3 +195,16 @@ function ascending(){
         }
     }
 }
+filter.addEventListener('keyup', filterTasks);
+function filterTasks(e) {
+    const term = e.target.value.toLowerCase();
+    const search= document.querySelector('.collection');
+    const items=search.getElementsByTagName('li')
+    Array.from(items).forEach(function(item){
+        const entry =item.firstChild.textContent;
+        if(entry.toLowerCase().indexOf(term) != -1){
+            item.style.display = 'block';
+        } else{
+            item.style.display = 'none';
+        }
+    })};
