@@ -100,43 +100,40 @@ function loadDataNew() {
             loader.classList.remove('active');
             postDiv3.innerHTML = output;
 
-    //         const increasing = document.querySelector('#asc')
-    //         const decreasing = document.querySelector('#des')
+            const increasing = document.querySelector('#asc')
+            const decreasing = document.querySelector('#des')
         
-    //         decreasing.addEventListener('click',descending)
-    //         increasing.addEventListener('click',ascending)
+            decreasing.addEventListener('click',descending)
+            increasing.addEventListener('click',ascending)
             
-    // function descending(){
-    //     const search = document.querySelectorAll('.collections');
-        
-    //     // const search= document.querySelectorAll('#bTitle');
-    //     for(i=0;i<search.length;i++){
-    //         for(j=0;j<search.length-1;j++){
-    //             title1=search[j].children[1].children[0].textContent 
-    //             title2=search[j+1].children[1].children[0].textContent 
-    //             if (title1 < title2){
-    //                 let temp = search[j].innerHTML
-    //                 search[j].innerHTML = search[j+1].innerHTML;
-    //                 search[j+1].innerHTML = temp;
-    //             }
-    //         }
-    //     }
-    // }
-    // function ascending(){
-    //     const search = document.querySelectorAll('.collections');
-    //     // const search= document.querySelectorAll('#bTitle');
-    //     for(i=0;i<search.length;i++){
-    //         for(j=0;j<search.length-1;j++){
-    //             title1=search[j].children[1].children[0].textContent 
-    //             title2=search[j+1].children[1].children[0].textContent 
-    //             if (title1 > title2){
-    //                 let temp = search[j].innerHTML
-    //                 search[j].innerHTML = search[j+1].innerHTML;
-    //                 search[j+1].innerHTML = temp;
-    //             }
-    //         }
-    //     }
-    // }
+            function descending(){
+                const search = document.querySelectorAll('.collections');
+                for(i=0;i<search.length;i++){
+                    for(j=0;j<search.length-1;j++){
+                        title1=search[j].children[1].children[0].textContent 
+                        title2=search[j+1].children[1].children[0].textContent 
+                        if (title1 < title2){
+                            let temp = search[j].innerHTML
+                            search[j].innerHTML = search[j+1].innerHTML;
+                            search[j+1].innerHTML = temp;
+                        }
+                    }
+                }
+            }
+            function ascending(){
+                const search = document.querySelectorAll('.collections');
+                for(i=0;i<search.length;i++){
+                    for(j=0;j<search.length-1;j++){
+                        title1=search[j].children[1].children[0].textContent 
+                        title2=search[j+1].children[1].children[0].textContent 
+                        if (title1 > title2){
+                            let temp = search[j].innerHTML
+                            search[j].innerHTML = search[j+1].innerHTML;
+                            search[j+1].innerHTML = temp;
+                        }
+                    }
+                }
+            }
 
 
 
