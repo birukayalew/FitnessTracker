@@ -5,18 +5,12 @@
     padding: 0;
     margin: 0;
 }
-
 .part{
     margin: 2% 0% 0% 00%;
     padding: 10% 5% 0% 40%;
-    background: #636363; 
-background: -webkit-linear-gradient(to right, #a2ab58, #636363);  
-background: linear-gradient(to right, #a2ab58, #636363); 
-
-    height: 100vh;
+    height: 100px;
 }
 .clock{
-    margin-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +20,7 @@ background: linear-gradient(to right, #a2ab58, #636363);
     background-size: cover;
     border-radius: 50%;
     box-shadow: inset 2px 2px 12px 3px #cfc8c8;
-    border: 15px solid white;
+    border: 15px solid #cfc8c8;
 }
 .clock::before{
     content: '';
@@ -86,10 +80,11 @@ background: linear-gradient(to right, #a2ab58, #636363);
 }
 
 /* Gallery page */  
-/* .images{
+.images{
     z-index: 1;
     width: 100%;
     border-radius: 5px;
+    height: 500px;
     
 }
 .img-slider{
@@ -102,7 +97,6 @@ background: linear-gradient(to right, #a2ab58, #636363);
     height: 500px;
     
 }
-
 .img-slider .slide{
     z-index: 1;
     position: absolute;
@@ -134,4 +128,4 @@ background: linear-gradient(to right, #a2ab58, #636363);
 .img-slider .navigation .btn.active{
     background: #2696E9;
     box-shadow: 0 0 2px  rgba(0,0,0,0.5);
-} */
+}
