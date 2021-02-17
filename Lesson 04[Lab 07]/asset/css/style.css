@@ -1,6 +1,6 @@
 /* Clock page */
 
-/* *{
+*{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -83,13 +83,14 @@ background: linear-gradient(to right, #a2ab58, #636363);
     height: 100px;
     background: red;
     border-radius: 6px 6px 0 0; 
-} */
+}
 
 /* Gallery page */  
 /* .images{
     z-index: 1;
     width: 100%;
     border-radius: 5px;
+    
 }
 .img-slider{
     margin: 2% 0% 0% 20%;
@@ -99,6 +100,7 @@ background: linear-gradient(to right, #a2ab58, #636363);
     position: absolute;
     width: 800px;
     height: 500px;
+    
 }
 
 .img-slider .slide{
