@@ -17,18 +17,20 @@ function arrayDestructuring() {
     let arr = ["Margaery", "Tyrell"]
 
     //1. Destructor this array to firstName and lastName
-
+    arr = ["firstName","lastName"]
     //2. Display it  [Replace it with ${firstName} ${lastName} once you have the variables]
-    des_arr.innerHTML = `Hello , I am firstName lastName `
+    des_arr.innerHTML = `Hello , I am ${arr[0]} ${arr[1]} `
 
 
     // we have an array with the name and surname
     let str = "Margaery Tyrell"
 
     //1. Destructor this string array to firstName and lastName by using split() method of string object
+    let first = str.split(" ")[0];
+    let second = str.split(" ")[1];
 
     //2. Display it [Replace it with ${firstName} ${lastName} once you have the variables]
-    des_string.innerHTML = `Hello , I am firstName lastName `
+    des_string.innerHTML = `Hello , I am ${first} ${second} `
 
 
 
@@ -41,16 +43,21 @@ function objectDestructuring() {
     // we have a person  with the fname and surname
     let person = { firstName: "John", lastName: "Smith" }
 
-    //1. Destructor this object to firstName and lastName 
 
+    //1. Destructor this object to firstName and lastName 
+    person = { firstName: "firstName", lastName: "lastName" }
+    let firstName = person.firstName;
+    let lastName = person.lastName;
     //2. Display it [Replace it with ${firstName} ${lastName} once you have the variables]
-    des_obj1.innerHTML = `Hi , I am firstName lastName `
+    des_obj1.innerHTML = `Hi , I am ${firstName} ${lastName} `;
 
 
     //1. Destructor this object to fName and sName [different naming]
-
+    person = { firstName: "fName", lastName: "sName"}
+    let fname = person.firstName;
+    let lName = person.lastName;
     //2. Display it [Replace it with ${Name} ${lName} once you have the variables]
-    des_obj2.innerHTML = `Hi , I am fName lName `
+    des_obj2.innerHTML = `Hi , I am ${fname} ${lName} `
 
 
 }
@@ -61,7 +68,7 @@ function spreadSyntax() {
     const arr = [1, 2, 3, 4]
 
     //1. Pass the array using spread syntax
-    const result = sum1();
+    const result = sum1(...arr);
 
     //Display it 
     spread_syntax.innerHTML = `The Sum is : ${result} `
@@ -101,11 +108,11 @@ function sum1(x1, x2, x3, x4) {
 
 
 //3. Make this function to support rest, and add 5 numbers
-function sum2(x1, x2) {
+function sum2(x1, x2,...rest) {
 
     //4. Function that add 5 numbers [Consider Adding the arr[0], arr[1], arr[2]]
 
-    return x1 + x2;
+    return x1 + x2 + rest[0] + rest[1] + rest[2];
 
 
 }
