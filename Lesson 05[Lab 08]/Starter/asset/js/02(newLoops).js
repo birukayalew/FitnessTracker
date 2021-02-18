@@ -13,7 +13,7 @@ function forINLoop() {
     const student = { name: "Abebe", age: 21, year: "2dn year" }
 
     // 1. Create a for in loop that iterate over the student object
-
+    
 
     // 2. Inside the loop paint the UI [Use the Format Given Below]
 
@@ -25,6 +25,9 @@ function forINLoop() {
     //     <li class="list-group-item" >${Key} : ${Value}</li>
 
     // `;
+    for (let key in student){
+        forInLoop.innerHTML += `<li class="list-group-item" >${key} : ${student[key]}</li>`;
+    }
 
 }
 
@@ -47,5 +50,8 @@ function forOFLoop() {
     //     <li class="list-group-item" >Name : Abebe</li>
 
     // `;
+    for (let key of students){
+        forOfLoop.innerHTML += `<li class="list-group-item" >Name : Abebe</li>`;
+    }
 
 }
