@@ -46,3 +46,8 @@ const Obj_C3 = document.querySelector('#Obj_C3');
 //OOP 2 [Inheritance]
 const fun_proto = document.querySelector('#fun_proto');
 const es6_proto = document.querySelector('#es6_proto');
+
+
+// arrow issue
+const es5_issue = document.querySelector('.es5');
+const es6_issue = document.querySelector('.es6');

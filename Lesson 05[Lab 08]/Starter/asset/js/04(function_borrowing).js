@@ -64,3 +64,30 @@ function usingBind() {
 
 
 }
+
+// demo on ES6 arrow function issues
+//ES5 Solution 
+let box1 = {
+    width : 2, 
+    clickMe: function ()
+   {
+       var self = this;
+       es5_issue.innerHTML = ` ${self.width}`
+   }
+
+ 
+ }
+ box1.clickMe();
+ //ES6 Solution 
+ let box = {
+    width : 2, 
+    clickMe(){
+        es6_issue.innerHTML = `${this.width}`
+    }
+
+ 
+ }
+
+ box.clickMe();
+
+
